@@ -1,1 +1,46 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><title>QR Code Generator</title><link rel='stylesheet' href='style.css'></head><body><div class='container'><h1>QR Code Generator</h1><input id='qrText' placeholder='Enter text or URL'><br><br><button onclick='generateQR()'>Generate QR Code</button><button onclick='clearQR()'>Clear</button><br><br><img id='qrImage'></div><script src='script.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>QR Code Generator</h1>
+
+    <p>Generate QR Codes for Text or URLs</p>
+
+    <input
+        type="text"
+        id="qrText"
+        placeholder="Enter text or URL">
+
+    <br><br>
+
+    <button id="generateBtn">
+        Generate QR Code
+    </button>
+
+    <button id="clearBtn">
+        Clear
+    </button>
+
+    <br><br>
+
+    <img id="qrImage" alt="QR Code">
+
+    <footer>
+        <p>Developed by Swathi C</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
