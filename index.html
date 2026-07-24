@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+text-align:center;
+margin-top:60px;
+}
+
+.container{
+background:white;
+width:400px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input{
+width:90%;
+padding:10px;
+font-size:16px;
+margin-top:10px;
+}
+
+button{
+padding:10px 20px;
+margin-top:15px;
+font-size:16px;
+cursor:pointer;
+}
+
+img{
+margin-top:20px;
+width:250px;
+height:250px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>QR Code Generator</h2>
+
+<input
+type="text"
+id="text"
+placeholder="Enter text or URL">
+
+<br>
+
+<button onclick="generateQR()">
+
+Generate QR Code
+
+</button>
+
+<br>
+
+<img id="qrImage" alt="Generated QR Code">
+</div>
+
+<script src="frontend.js"></script>
+
+</body>
+</html>
