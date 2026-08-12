@@ -2,8 +2,108 @@
 <html>
 <head>
     <title>QR Code Generator</title>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #qrcode {
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>QR Code Generator</h1>
+
+    <div class="container">
+
+        <h1>QR Code Generator</h1>
+
+        <input
+            type="text"
+            id="text"
+            placeholder="Enter text or URL"
+        >
+
+        <br>
+
+        <button onclick="generateQR()">
+            Generate QR Code
+        </button>
+
+        <div id="qrcode"></div>
+
+    </div>
+
+    <script>
+        function generateQR() {
+
+            const text = document.getElementById("text").value;
+            const qrContainer = document.getElementById("qrcode");
+
+            // Clear previous QR code
+            qrContainer.innerHTML = "";
+
+            if (text.trim() === "") {
+                alert("Please enter text or URL");
+                return;
+            }
+
+            new QRCode(qrContainer, {
+                text: text,
+                width: 200,
+                height: 200
+            });
+        }
+    </script>
+
 </body>
 </html>
